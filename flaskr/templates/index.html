@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicker</title>
+    <link rel="stylesheet" href="static/index.css"/>
+</head>
+<body>
+<div>
+    <h1> Clicker </h1>
+    <a href="/"></a>
+    <form>
+        <button type="submit" class="button">Click me</button>
+    </form>
+    <h2> You gain {{ user["coins_per_sec"] }} per second </h2>
+    <h2> You click {{ user["coins_per_click"] }} per click</h2>
+    <h2> You have {{ user["money"] }} </h2>
+    <a href="/upgrade_click">
+        <button class="button"> Upgrade click</button>
+    </a>
+    <a href="/upgrade_autoclicker">
+        <button class="button"> Upgrade autoclicker</button>
+    </a>
+</div>
+{% if g.user %}
+    <li><a href="{{ url_for("auth.logout") }}" class="back">Log Out</a>
+{% endif %}
+</body>
+</html>
